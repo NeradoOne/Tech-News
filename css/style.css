@@ -1,22 +1,20 @@
 :root {
-    --main-color: #ea698b;
-    --main-color-transparent: rgba(234, 105, 140, 0.5);
-    --sec-color: #47126b;
-    --sec-color-transparent: rgba(71, 18, 107, 0.7);
-    --yellow: #e9c46a;
-
-    --main-Pink: hsl(322, 100%, 66%);
-    --sec-ligth: hsl(193, 100%, 96%);
-    --sec-dark: hsl(192, 100%, 9%);
-    --active-blue: hsl(208, 11%, 55%);
+    --main-color: hsl(344, 75%, 66%);
+    --main-color-transparent: hsla(344, 75%, 66%, 0.5);
+    --sec-color: hsl(276, 71%, 25%);
+    --sec-color-transparent: hsla(276, 71%, 25%, 0.7);
+    --ligth: hsl(193, 100%, 96%);
+    --dark: hsl(192, 100%, 9%);
+    --active-yellow: #e9c46a;
+    /* --main-Pink: hsl(322, 100%, 66%); */
+    /* --active-blue: hsl(208, 11%, 55%); */
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-        Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    margin: 0;
-    color: var(--sec-dark);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     box-sizing: border-box;
+    color: var(--dark);
+    margin: 0;
 }
 header {
     position: relative;
@@ -29,14 +27,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 main {
+    background-color: var(--ligth);
     padding: 0 4em;
-    background-color: var(--sec-ligth);
 }
 
-h1 {
+.page-title {
     position: absolute;
-    bottom: 0;
     padding: 0 2em;
+    bottom: 0;
 }
 
 section {
@@ -48,35 +46,39 @@ section {
     margin: 0 auto;
 }
 
+/* Header Video Background */
+
 .header-videoBg {
-    width: 100%;
-    height: 20vh;
-    object-fit: cover;
     position: absolute;
+    object-fit: cover;
+    height: 20vh;
+    width: 100%;
     left: 0;
     top: 0;
     z-index: -1;
 }
 
+/* Navigation Bar */
+
 .navBar {
     background: var(--sec-color-transparent);
-    display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 4em;
+    display: flex;
 }
-
 .navBar-logo {
     width: 50px;
 }
 .navBar-nav {
+    /* justify-content: space-evenly; */
     display: flex;
-    justify-content: space-evenly;
     padding: 0;
 }
 .navBar-nav li {
     list-style: none;
-    margin: 0 0.5em;
+    margin: 0;
+    margin-right: .5em;
 }
 .navBar-link {
     text-decoration: none;
@@ -84,13 +86,12 @@ section {
     transition: 0.5s ease-out color;
 }
 .navBar-link:hover {
-    color: var(--sec-ligth);
+    color: var(--ligth);
 }
-.navBar-nav .actualPage {
-    color: var(--sec-ligth);
+.actualPage {
+    color: var(--ligth);
     font-weight: bold;
 }
-
 .navBar form {
     height: 20px;
     display: flex;
@@ -105,15 +106,12 @@ section {
     height: 25px;
     border-radius: 5px 0 0 5px;
     outline: none;
-    color: var(--sec-ligth);
+    color: var(--ligth);
     background-color: var(--main-color-transparent);
 }
-
-.navBar-search:focus,
-.navBar-search::placeholder {
-    color: var(--sec-ligth);
+.navBar-search:focus, .navBar-search::placeholder {
+    color: var(--ligth);
 }
-
 .navBar-search-btn {
     width: 35px;
     height: 25px;
@@ -125,6 +123,8 @@ section {
     cursor: pointer;
     font-size: 1em;
 }
+
+/* Reviews section */
 
 .reviews {
     display: flex;
@@ -138,7 +138,7 @@ section {
     flex: 1 40%;
     border-radius: 4px;
     padding: 32px 24px;
-    border: 1px solid var(--sec-ligth);
+    border: 1px solid var(--ligth);
     transition: border 0.3s ease-out, background-color 0.3s;
     text-align: center;
 }
@@ -147,16 +147,17 @@ section {
     border: 1px solid var(--sec-color);
     box-shadow: rgba(71, 18, 107, 0.12) 0px 48px 100px 0px;
 }
-
 .review-card-video{
     width: 90%;
 }
 
+/* News section */
+
 .news {
     display: flex;
     flex-flow: row wrap;
+    align-items: center;
 }
-
 .news-title {
     flex: 1 100%;
     margin-bottom: 3em;
@@ -168,77 +169,84 @@ section {
     overflow: hidden;
     margin: 12px;
     border-radius: 4px;
-    padding: 32px 24px;
-    border: 1px solid var(--sec-ligth);
-    transition: border 0.3s ease-out, background-color 0.3s;
+    padding: 3em;
+    border: 1px solid var(--ligth);
+    transition: border 0.4s ease-out, background-color 0.4s ease-out;
+    text-align: center;
 }
 .news-card:hover {
     background-color: #f2f8f9;
     border: 1px solid var(--sec-color);
     box-shadow: rgba(71, 18, 107, 0.12) 0px 48px 100px 0px;
 }
+.news-card-description{text-align: start;}
 .news-card img {
     min-width: 200px;
+    /* max-width: 500px; */
     width: 100%;
 }
-
 .news-card a {
-    align-self: center;
     position: absolute;
-    padding-right: 2em;
+    color: var(--main-color);
     bottom: 0;
     right: 0;
+    padding-right: 2em;
     text-decoration: none;
-    color: var(--main-color);
-    text-align: end;
     width: 100%;
-    height: 9%;
     border-radius: 0 0 4px 4px;
-    transition: color 0.3s ease-out, background-color 0.3s;
+    transition: color 0.4s ease-out, background-color 0.4s ease-out;
+    display: flex;
+    height: 8%;
+    align-items: center;
+    justify-content: end;
 }
-
 .news-card a:hover {
     background-color: var(--sec-color-transparent);
-    color: var(--sec-ligth);
+    color: var(--ligth);
 }
 
-.footer {
+/* Footer section */
+.footer{
     background-color: var(--sec-color);
-}
-.footer .wrapper {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
+    padding:0 4em ;
 }
 
-.footer-subscribe {
-    flex: 1 100%;
-    text-align: center;
-    display: inline;
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-areas: 
+    "subs subs subs subs"
+    "social social icons none"
+    "copy copy copy copy";
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+}
+.footer-subscribe{
+    grid-area: subs;
 }
 .footer-subscribe a {
     text-decoration: none;
     color: var(--main-color);
-    transition: color 0.5s ease-out, letter-spacing 0.5s;
+    transition: color 0.5s ease-out, letter-spacing 0.5s ease-out;
 }
 .footer-subscribe a:hover {
-    color: var(--yellow);
+    color: var(--active-yellow);
     letter-spacing: 2px;
 }
-
-.footer-social {
-    flex: 1 40%;
-    text-align: end;
+.footer-social{
+    grid-area: social;
+    justify-self: end;
 }
-
 .footer-social-icons {
-    display: flex;
-    flex: 1 40%;
-    margin-right: 4em;
-    justify-content: space-around;
     color: var(--main-color);
+    padding: 0;
+    width: 100%;
+    grid-area: icons;
+    display: flex;
     list-style: none;
-    padding-left: 0;
+    justify-content: space-around;
+    justify-self: start;
 }
 .footer-social-icons a {
     color: inherit;
@@ -247,10 +255,11 @@ section {
     transition: color 0.3s ease-out;
 }
 .footer-social-icons a:hover {
-    color: var(--yellow);
+    color: var(--active-yellow);
 }
-.footer .copyright {
-    color: var(--sec-ligth);
+.copyright{
+    grid-area: copy;
+    color: var(--ligth);
 }
 
 /* Pagina Noticia Completa */
@@ -263,7 +272,8 @@ section {
     flex: 1 100%;
 }
 .new-card-image {
-    text-align: center;
+    justify-content: center;
+    margin: 2em auto;
 }
 .new-card-subtitle {
     flex: 1 100%;
@@ -271,40 +281,38 @@ section {
 
 .horizontal {
     flex: 1 100%;
-    max-width: 800px;
-    margin: 1em auto;
-    display: block;
+    max-width: 1240px;
+    width: 80vw;
 }
 
 .vertical {
-    flex: 2 30%;
-    max-height: 600px;
-    max-width: 300px;
-    margin: 2em 0;
+    height: 80vh;
 }
 .new-card-description2 {
-    flex: 1 30%;
     margin: 2em;
     align-self: center;
 }
 
 /* Formulario */
+
 .subscribe {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+.subscribe-form{
+    justify-content: center;
+
 }
 .subscribe label {
     display: block;
     color: var(--sec-color);
 }
 .subscribe h2 {
-    align-self: start;
+    text-align: center;
     margin-bottom: 2em;
 }
-
-.subscribe input,
-.subscribe .btn {
+.subscribe input, .subscribe .btn {
     width: 80%;
     margin: 1em 3em;
     padding: 1em;
@@ -313,12 +321,20 @@ section {
     border: 1px solid var(--sec-color);
     border-radius: 3px;
     transition: all 0.35s ease-in-out;
-    color: var(--sec-ligth);
+    color: var(--ligth);
+}
+label[for="terms"]{
+    display: inline-block;
+    text-align: center;
+    margin: 0;
+}
+.subscribe input[type="checkbox"]{
+    width: initial;
+    margin-left: 1em;
 }
 .subscribe input::placeholder {
-    color: var(--sec-ligth);
+    color: var(--ligth);
 }
-
 .subscribe input[type="date"]::-webkit-calendar-picker-indicator {
     filter: invert(1);
 }
@@ -327,43 +343,71 @@ section {
     border-color: var(--main-color);
     color: var(--main-color);
 }
-
 .btn:hover {
     background-color: var(--sec-color-transparent);
     cursor: pointer;
     color: var(--main-color);
 }
 
+/* Media Queries */
+
 @media screen and (max-width: 768px) {
-    .navBar-logo{
+    .navBar, main, .footer{
+        padding: 0 3em;
+    }
+    .page-title{
+        padding: 0 1.5em;
+    }
+    .logo{
         display: none;
     }
+    .navBar-search{
+        margin-left: 2em;
+    }
     .review-card{
-        flex: 1 100%;
+        flex: auto;
+        margin: 1em 0;
     }
     .news-card{
         flex: auto;
+        margin: 1em 0;
     }
-    main, .navBar{
-        padding: 0 3em;
+    .news-card a{
+        display: flex;
+        height: 8%;
+        align-items: center;
+        justify-content: end;
     }
     .copyright{
         font-size: 0.5em;
     }
+    .footer-container{
+        align-items: center;
+        grid-template-areas: 
+        "subs subs subs subs"
+        "social social social social "
+        "icons icons icons icons "
+        "copy copy copy copy ";
+    }
+    .footer-social{
+        width: 100%;
+        text-align: center;
+    }
+    .footer-social-icons{
+        justify-content: space-evenly;
+        justify-self: center;
+        width: 60%;
+    }
 }
 
 @media screen and (max-width: 600px) {
-main, .navBar, .footer{
-    padding: 0 2em;
-}
-.footer-social{
-    text-align: center;
-}
-.footer-social-icons{
-    padding: 0;
-    flex: 1 70%;
-    justify-content: space-evenly;
-    align-items: center;
-    margin-right: 0;
-}
+    main, .navBar, .footer{
+        padding: 0 2em;
+    }
+    .page-title{
+        padding: 0 1em;
+    }
+    .copyright{
+        font-size: 0.3em;
+    }
 }
