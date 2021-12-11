@@ -33,7 +33,7 @@ main {
 
 .page-title {
     position: absolute;
-    padding: 0 2em;
+    padding: 0;
     bottom: 0;
 }
 
@@ -76,8 +76,7 @@ nav:before{
     align-items: center;
     padding: 0 4em;
     display: flex;
-    max-width: 1240px;
-    margin: 0 auto;
+
 }
 .navBar-logo {
     width: 50px;
