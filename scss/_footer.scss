@@ -1,0 +1,68 @@
+.footer{
+    background-color: $sec-color;
+    padding: 0 4em;
+    margin-top: -1px;
+    &-container{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+        "subs subs"
+        "social icons"
+        "copy copy";
+        justify-items: center;
+        align-items: center;
+        padding: 0 2em;
+    }
+    &-subscribe{
+        grid-area: subs;
+
+        & a{
+            text-decoration: none;
+            color: $main-color;
+            transition: color 500ms ease-out, letter-spacing 500ms;
+            &:hover{
+                color: $active-yellow;
+                letter-spacing: 1.5px;
+            }
+            & i{
+                transition: margin 500ms ease-out;
+            }
+            &:hover i{
+                margin-left: 30px;
+                animation: shake-icon 1.2s ease 800ms both;
+            }
+        }
+    }
+    &-social{
+        grid-area: social;
+        justify-self: end;
+        padding-right: 1em;
+    }
+    &-social-icons{
+        grid-area: icons;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+        font-size: 32px;
+        // justify-self: start;
+        
+        & a i{
+            color: $main-color;
+            @include transition(color);
+            &:hover{
+                color: $active-yellow;
+                animation: breath-icon 1.5s ease-in-out 500ms infinite both;
+            }    
+        }
+    }
+
+    .copyright{
+        grid-area: copy;
+        color: $ligth;
+        font-weight: lighter;
+        margin-bottom: 5px;
+    }
+}

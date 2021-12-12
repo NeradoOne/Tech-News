@@ -1,0 +1,47 @@
+.news{
+    @extend .reviews;
+    
+    &-title{
+    @extend .review-title; 
+    padding: 0 1em;
+    }
+
+    &-card{
+        @include card(relative);
+        flex: 1 30%;
+        justify-content: space-between;
+        & img{
+            width: 100%;
+            min-width: 160px;
+        }
+        &-read{
+            box-sizing: border-box;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding-right: 2em;
+            width: 100%;
+            height: 2em;
+            text-decoration: none;
+            color: $main-color;
+            transition: background-color 500ms ease-out, color 500ms;
+            text-transform: uppercase;
+            font-weight: 600;
+            &:hover{
+                background-color: $sec-color;
+                color: $ligth;
+            }
+            & i{
+                margin-bottom: -1px;
+                padding-left: .5em;
+                transition: transform 500ms ease-out;
+            }
+            &:hover i{
+            transform: translateX(1em);
+            }
+        }
+    }
+}
