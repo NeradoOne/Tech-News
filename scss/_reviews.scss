@@ -14,11 +14,10 @@
             @include card;
             display: flex;
             flex-direction: column;
-            flex: 1 35%;
+            flex: 1 45%;
 
             &-title{
                 order: 2;
-                // margin-top: 0;
             }
             &-video-container{
                 order: 1;

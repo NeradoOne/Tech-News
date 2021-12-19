@@ -1,0 +1,77 @@
+.subscribe{
+    h2{
+        margin-top: 0;
+        text-align: center;
+    }
+    &-form{
+        max-width: 500px;
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+        align-items: center;
+        label{
+            align-self: flex-start;
+            color: $sec-color;
+            position: relative;
+            display: block;
+    
+            &[for="name"]:before,
+            &[for="mail"]:before,
+            &[for="terms"]:before {
+                content: "* ";
+                color: red;
+                position: absolute;
+                left: -.6em;
+                display: block;
+            }
+            &[for="terms"]{
+                display: inline-block;
+                text-align: center;
+                margin: 0;
+                letter-spacing: 0.7px;
+            }
+        }
+        .tyc{
+            width: 100%;
+            text-align: start;
+        }
+        .btn:hover{
+            background: $sec-color-transparent;
+        }
+        input{
+
+            &[type="number"]::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }      
+            &, .btn {
+                width: 100%;
+                margin: 1em 0;
+                line-height: 2em;
+                background: $sec-color;
+                border: 1px solid $sec-color;
+                border-radius: 3px;
+                transition: all 350ms ease-in-out;
+                color: $ligth;
+            }
+
+
+            &[type="checkbox"]{
+                width: initial;
+                margin: 1em;
+            }
+            &::placeholder{
+                color: $ligth;
+            }
+            &[type="date"]::-webkit-calendar-picker-indicator{
+                filter: invert(1);
+            }
+            &:focus{
+                outline: 0;
+                border-color: $main-color;
+                color: $main-color;
+            }
+
+        }
+    }
+}

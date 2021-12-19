@@ -59,6 +59,9 @@ body {
     padding-left: 2em;
     bottom: 0;
     box-sizing: border-box; }
+  body .space {
+    display: block;
+    margin: 1em; }
 
 header {
   position: relative;
@@ -86,11 +89,12 @@ header {
     width: 50px; }
   .navBar-nav {
     display: flex;
-    padding: 0; }
+    padding: 0;
+    align-self: center; }
     .navBar-nav li {
       list-style: none;
       margin: 0;
-      margin-right: .5em; }
+      margin-right: 3em; }
   .navBar-link {
     text-decoration: none;
     color: #e9678a;
@@ -146,10 +150,10 @@ header {
     padding: 2em;
     border: 1px solid transparent;
     border-radius: 4px;
-    transition: border-color 500ms ease-out, background-color 500ms, box-shadow 500ms;
+    transition: border-color 500ms ease-out, background-color 500ms, box-shadow 500ms, opacity 500ms;
     display: flex;
     flex-direction: column;
-    flex: 1 35%; }
+    flex: 1 45%; }
     .reviews .review-card:hover, .news .review-card:hover {
       background-color: #f2f8f9;
       border-color: #49126d;
@@ -179,7 +183,7 @@ header {
   padding: 2em;
   border: 1px solid transparent;
   border-radius: 4px;
-  transition: border-color 500ms ease-out, background-color 500ms, box-shadow 500ms;
+  transition: border-color 500ms ease-out, background-color 500ms, box-shadow 500ms, opacity 500ms;
   position: relative;
   flex: 1 30%;
   justify-content: space-between; }
@@ -269,15 +273,172 @@ header {
 .new-card {
   max-width: 768px;
   margin: 0 auto; }
+  .new-card .new-title {
+    font-size: 36px;
+    font-weight: 800;
+    margin-bottom: 9px; }
+  .new-card-subtitle {
+    color: #49126d;
+    font-weight: 400;
+    font-style: italic;
+    margin: 0; }
+  .new-card .credits {
+    display: block;
+    margin: 9px 0;
+    font-weight: 300; }
+    .new-card .credits a {
+      text-decoration: none;
+      color: #e9678a; }
+    .new-card .credits i {
+      color: #49126d; }
   .new-card-image {
     display: block;
-    margin: 0 auto; }
-  .new-card .horizontal {
+    margin: 0 auto;
     max-width: 1024px;
-    width: 80%; }
-  .new-card .vertical {
-    width: 50%; }
+    width: 100%; }
+    .new-card-image-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto;
+      gap: 5px;
+      margin: 2em 0; }
+      .new-card-image-grid-1 {
+        grid-column: 1/3; }
+      .new-card-image-grid-1, .new-card-image-grid-2, .new-card-image-grid-3 {
+        width: 100%; }
+  .new-card-description:first-of-type {
+    text-align: justify;
+    font-size: 20px;
+    color: #49126d; }
+    .new-card-description:first-of-type::before, .new-card-description:first-of-type::after {
+      display: inline-block;
+      content: "";
+      width: 0.7em;
+      height: 2px;
+      margin-bottom: 5px;
+      background-color: #e9678a; }
+
+.subscribe h2 {
+  margin-top: 0;
+  text-align: center; }
+
+.subscribe-form {
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  align-items: center; }
+  .subscribe-form label {
+    align-self: flex-start;
+    color: #49126d;
+    position: relative;
+    display: block; }
+    .subscribe-form label[for="name"]:before, .subscribe-form label[for="mail"]:before, .subscribe-form label[for="terms"]:before {
+      content: "* ";
+      color: red;
+      position: absolute;
+      left: -.6em;
+      display: block; }
+    .subscribe-form label[for="terms"] {
+      display: inline-block;
+      text-align: center;
+      margin: 0;
+      letter-spacing: 0.7px; }
+  .subscribe-form .tyc {
+    width: 100%;
+    text-align: start; }
+  .subscribe-form .btn:hover {
+    background: rgba(73, 18, 109, 0.7); }
+  .subscribe-form input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0; }
+  .subscribe-form input, .subscribe-form input .btn {
+    width: 100%;
+    margin: 1em 0;
+    line-height: 2em;
+    background: #49126d;
+    border: 1px solid #49126d;
+    border-radius: 3px;
+    transition: all 350ms ease-in-out;
+    color: #ebfbff; }
+  .subscribe-form input[type="checkbox"] {
+    width: initial;
+    margin: 1em; }
+  .subscribe-form input::placeholder {
+    color: #ebfbff; }
+  .subscribe-form input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1); }
+  .subscribe-form input:focus {
+    outline: 0;
+    border-color: #e9678a;
+    color: #e9678a; }
 
 @media screen and (min-width: 1350px) {
   body .page-title {
     padding: 0; } }
+
+@media screen and (max-width: 768px) {
+  body main, body .navBar, body .footer {
+    padding: 0 2em; }
+  .navBar-nav li {
+    margin-right: .7em; }
+  .reviews .review-card, .news .review-card, .news .news-card {
+    flex: 1 auto;
+    padding: 1.5em; }
+  .copyright {
+    font-size: .8em; }
+  .footer-container {
+    grid-template-areas: "subs subs" "social social" "icons icons" "copy copy";
+    gap: 1em; }
+  .footer-social {
+    padding: 0;
+    margin: 0;
+    justify-self: center;
+    text-align: center; }
+    .footer-social-icons {
+      font-size: 40px; } }
+
+@media screen and (max-width: 600px) {
+  body main, body .navBar, body .footer {
+    padding: 0 .5em; }
+  body header {
+    height: 25vh; }
+  body .page-title {
+    padding-left: .5em;
+    margin: 0; }
+  .copyright {
+    font-size: 10px; }
+  .header-videoBg {
+    height: 100%; }
+  .navBar {
+    position: relative;
+    flex-flow: row wrap;
+    justify-content: space-around; }
+    .navBar::before {
+      height: 120%; }
+    .navBar form {
+      width: 80%; }
+  .new-card .new-title {
+    font-size: 28px; }
+  .new-card-description {
+    padding: 1em; }
+  .new-card-image-grid-1, .new-card-image-grid-2, .new-card-image-grid-3 {
+    grid-column: 1/3; }
+  .footer-container {
+    padding: 0; } }
+
+@media screen and (max-width: 368px) {
+  .logo svg {
+    display: none; }
+  .navBar {
+    justify-content: center; }
+  .navBar-nav {
+    width: 100%; }
+  .footer-subscribe {
+    text-align: center;
+    font-size: 26px; }
+  .navBar-nav {
+    margin: 0 0 .3em;
+    justify-content: space-between; }
+  .copyright {
+    font-size: 7px; } }

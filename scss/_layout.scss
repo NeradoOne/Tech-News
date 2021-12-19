@@ -14,7 +14,8 @@ $active-yellow: hsl(43, 74%, 66%);
     border: 1px solid transparent;
     border-radius: 4px;
     transition: border-color 500ms ease-out, background-color 500ms,
-        box-shadow 500ms;
+    box-shadow 500ms, opacity 500ms;
+
     &:hover {
         background-color: #f2f8f9;
         border-color: $sec-color;
@@ -111,4 +112,26 @@ body {
         bottom: 0;
         box-sizing: border-box;
     }
+    .space{
+        display: block;
+        margin: 1em;
+    }
+    // .hidden{
+    //     box-sizing: border-box;
+    //     position: absolute;
+    //     left: -1px;
+    //     right: -1px;
+    //     top: 95%;
+    //     background-color: $ligth;
+    //     padding: 2em;
+    //     padding-top: 0;
+    //     margin: 0;
+    //     opacity: 0;
+    //     z-index: -1;
+    //     border: 1px solid transparent ;
+    //     border-top: 0;
+    //     border-radius: 0 0 4px 4px;
+    //     transition: border-color 500ms ease-out, background-color 500ms,
+    //     box-shadow 500ms opacity 500ms;
+    // }
 }
