@@ -159,7 +159,8 @@ header {
       border-color: #49126d;
       box-shadow: rgba(73, 18, 109, 0.12) 0px 48px 100px 0px; }
     .reviews .review-card-title, .news .review-card-title {
-      order: 2; }
+      order: 2;
+      text-transform: capitalize; }
     .reviews .review-card-video-container, .news .review-card-video-container {
       order: 1;
       position: relative;
@@ -194,6 +195,8 @@ header {
   .news-card img {
     width: 100%;
     min-width: 160px; }
+  .news-card-title {
+    text-transform: capitalize; }
   .news-card-read {
     box-sizing: border-box;
     position: absolute;
