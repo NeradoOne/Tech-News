@@ -332,6 +332,7 @@ header {
   margin: 0 auto;
   align-items: center; }
   .subscribe-form label {
+    font-weight: 500;
     align-self: flex-start;
     color: #49126d;
     position: relative;
@@ -340,7 +341,8 @@ header {
       content: "* ";
       color: red;
       position: absolute;
-      left: -.6em;
+      left: -.5em;
+      top: 3px;
       display: block; }
     .subscribe-form label[for="terms"] {
       display: inline-block;
@@ -359,18 +361,25 @@ header {
     width: 100%;
     margin: 1em 0;
     line-height: 2em;
-    background: #49126d;
+    background: #ffffff;
     border: 1px solid #49126d;
     border-radius: 3px;
     transition: all 350ms ease-in-out;
-    color: #ebfbff; }
+    color: rgba(233, 103, 138, 0.5); }
+    .subscribe-form input.submit, .subscribe-form input .btn.submit {
+      background-color: #49126d;
+      color: #ebfbff; }
+    .subscribe-form input.reset, .subscribe-form input .btn.reset {
+      color: #49126d;
+      background-color: none; }
+      .subscribe-form input.reset:hover, .subscribe-form input .btn.reset:hover {
+        border-color: #49126d;
+        color: #ebfbff; }
   .subscribe-form input[type="checkbox"] {
     width: initial;
     margin: 1em; }
   .subscribe-form input::placeholder {
-    color: #ebfbff; }
-  .subscribe-form input[type="date"]::-webkit-calendar-picker-indicator {
-    filter: invert(1); }
+    color: rgba(233, 103, 138, 0.5); }
   .subscribe-form input:focus {
     outline: 0;
     border-color: #e9678a;

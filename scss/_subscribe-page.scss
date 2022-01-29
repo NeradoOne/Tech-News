@@ -10,6 +10,7 @@
         margin: 0 auto;
         align-items: center;
         label{
+            font-weight: 500;
             align-self: flex-start;
             color: $sec-color;
             position: relative;
@@ -21,7 +22,8 @@
                 content: "* ";
                 color: red;
                 position: absolute;
-                left: -.6em;
+                left: -.5em;
+                top:3px;
                 display: block;
             }
             &[for="terms"]{
@@ -39,7 +41,6 @@
             background: $sec-color-transparent;
         }
         input{
-
             &[type="number"]::-webkit-inner-spin-button {
                 -webkit-appearance: none;
                 margin: 0;
@@ -48,30 +49,37 @@
                 width: 100%;
                 margin: 1em 0;
                 line-height: 2em;
-                background: $sec-color;
+                background: #ffffff;
                 border: 1px solid $sec-color;
                 border-radius: 3px;
                 transition: all 350ms ease-in-out;
-                color: $ligth;
+                color: $main-color-transparent;
+
+                &.submit{
+                    background-color: $sec-color;
+                    color: $ligth;
+                }
+                &.reset{
+                    color: $sec-color;
+                    background-color: none;
+                    &:hover{
+                        border-color: $sec-color;
+                        color: $ligth;
+                    }
+                }
             }
-
-
             &[type="checkbox"]{
                 width: initial;
                 margin: 1em;
             }
             &::placeholder{
-                color: $ligth;
-            }
-            &[type="date"]::-webkit-calendar-picker-indicator{
-                filter: invert(1);
+                color: $main-color-transparent;
             }
             &:focus{
                 outline: 0;
                 border-color: $main-color;
                 color: $main-color;
             }
-
         }
     }
 }
