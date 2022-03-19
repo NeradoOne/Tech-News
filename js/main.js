@@ -1,5 +1,5 @@
 
-const locked = true;
+let locked = true;
 const user = {
     usuario: 'admin',
     contraseña: 'admin'
@@ -9,7 +9,7 @@ const acceder = () => {
         let usuario = prompt('Ingrese Usuario:');
         let contraseña = prompt('Ingrese Contraseña:');
         if (usuario == user.usuario && contraseña == user.contraseña) {
-            const locked = false;
+            locked = false;
             alert('Bienvenido, ha ingresado bajo los permisos de Administrador')
         } else {
             alert('Recuerde que usuario y contraseña por defecto son: admin/admin')
@@ -17,7 +17,7 @@ const acceder = () => {
         }   
     }
 }
-acceder()
+//acceder()
 
 //Comentrarios de ejemplo
 const comments = [
