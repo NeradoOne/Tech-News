@@ -321,6 +321,13 @@ header {
       margin-bottom: 5px;
       background-color: #e9678a; }
 
+.commentsCounter {
+  text-transform: uppercase;
+  letter-spacing: 1.3px;
+  font-weight: 500; }
+  .commentsCounter span {
+    color: #49126d; }
+
 .subscribe h2 {
   margin-top: 0;
   text-align: center; }
@@ -354,36 +361,39 @@ header {
     text-align: start; }
   .subscribe-form .btn:hover {
     background: rgba(73, 18, 109, 0.7); }
-  .subscribe-form input[type="number"]::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0; }
-  .subscribe-form input, .subscribe-form input .btn {
-    width: 100%;
-    margin: 1em 0;
-    line-height: 2em;
-    background: #ffffff;
-    border: 1px solid #49126d;
-    border-radius: 3px;
-    transition: all 350ms ease-in-out;
-    color: rgba(233, 103, 138, 0.5); }
-    .subscribe-form input.submit, .subscribe-form input .btn.submit {
-      background-color: #49126d;
-      color: #ebfbff; }
-    .subscribe-form input.reset, .subscribe-form input .btn.reset {
-      color: #49126d;
-      background-color: none; }
-      .subscribe-form input.reset:hover, .subscribe-form input .btn.reset:hover {
-        border-color: #49126d;
+  .subscribe-form input, .subscribe-form textarea {
+    resize: none;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif; }
+    .subscribe-form input[type="number"]::-webkit-inner-spin-button, .subscribe-form textarea[type="number"]::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0; }
+    .subscribe-form input, .subscribe-form input .btn, .subscribe-form textarea, .subscribe-form textarea .btn {
+      width: 100%;
+      margin: 1em 0;
+      line-height: 2em;
+      background: #ffffff;
+      border: 1px solid #49126d;
+      border-radius: 3px;
+      transition: all 350ms ease-in-out;
+      color: rgba(233, 103, 138, 0.5); }
+      .subscribe-form input.submit, .subscribe-form input .btn.submit, .subscribe-form textarea.submit, .subscribe-form textarea .btn.submit {
+        background-color: #49126d;
         color: #ebfbff; }
-  .subscribe-form input[type="checkbox"] {
-    width: initial;
-    margin: 1em; }
-  .subscribe-form input::placeholder {
-    color: rgba(233, 103, 138, 0.5); }
-  .subscribe-form input:focus {
-    outline: 0;
-    border-color: #e9678a;
-    color: #e9678a; }
+      .subscribe-form input.reset, .subscribe-form input .btn.reset, .subscribe-form textarea.reset, .subscribe-form textarea .btn.reset {
+        color: #49126d;
+        background-color: none; }
+        .subscribe-form input.reset:hover, .subscribe-form input .btn.reset:hover, .subscribe-form textarea.reset:hover, .subscribe-form textarea .btn.reset:hover {
+          border-color: #49126d;
+          color: #ebfbff; }
+    .subscribe-form input[type="checkbox"], .subscribe-form textarea[type="checkbox"] {
+      width: initial;
+      margin: 1em; }
+    .subscribe-form input::placeholder, .subscribe-form textarea::placeholder {
+      color: rgba(233, 103, 138, 0.5); }
+    .subscribe-form input:focus, .subscribe-form textarea:focus {
+      outline: 0;
+      border-color: #e9678a;
+      color: #e9678a; }
 
 @media screen and (min-width: 1350px) {
   body .page-title {

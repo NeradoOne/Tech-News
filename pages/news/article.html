@@ -19,9 +19,9 @@
         <!-- Font Awesome CDN -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
         <!-- Custom CSS -->
-        <!-- <link rel="stylesheet" href="../../css/styles.css">
+            <link rel="stylesheet" href="../../css/styles.css">
         <!-- JavaScript -->
-        <script defer src="../js/main.js"></script> -->
+        <script defer src="../../js/main.js"></script>
         <title>Tech News | Analogue Pocket Review: Game Boy Games Have Never Looked So Good</title>
     </head>
     <body>
@@ -181,6 +181,18 @@
                         now have the perfect place to play it.
                     </p>
                 </article>
+            </section>
+            <!-- Comentarios -->
+            <section class="wrapper">
+                <h3 class="commentsCounter">There are <span id="commentsCounter"></span> comments.</h3>
+                <form class="subscribe-form">
+                    <input id="commentName" type="text"placeholder='Name here..'>
+                    <textarea required name="comment" id="commentBox" cols="32" rows="8" placeholder="Comment here..."></textarea>
+                    <input type="submit" class="btn submit" id="btnCreateComment" value='Create comment'>
+                </form>
+                <div id="comments" class="comments">
+                    <!-- Los comentarios se recargan aqui -->
+                </div>
             </section>
         </main>
         <!-- Pie de pagina -->
