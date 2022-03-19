@@ -17,7 +17,7 @@ const acceder = () => {
         }   
     }
 }
-//acceder()
+acceder()
 
 //Comentrarios de ejemplo
 const comments = [
