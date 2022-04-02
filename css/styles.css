@@ -62,6 +62,9 @@ body {
   body .space {
     display: block;
     margin: 1em; }
+  body .toasty {
+    background: rgba(73, 18, 109, 0.7);
+    color: #ebfbff; }
 
 header {
   position: relative;
