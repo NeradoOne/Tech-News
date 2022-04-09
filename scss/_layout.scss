@@ -138,4 +138,31 @@ body {
         background: hsla(276, 71%, 25%, 0.7);
         color: hsl(193, 100%, 96%);
     }
+
+    //Loader Animation
+    .lds-dual-ring {
+        position: fixed;
+        top: 50%;
+        right: 50%;
+        transform: translate(50%,-50%);
+      }
+      .lds-dual-ring:after {
+        content: " ";
+        display: block;
+        width: 64px;
+        height: 64px;
+        margin: 8px;
+        border-radius: 50%;
+        border: 6px solid $main-color;
+        border-color: $main-color-transparent transparent $main-color-transparent transparent;
+        animation: lds-dual-ring 1.2s linear infinite;
+      }
+      @keyframes lds-dual-ring {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
 }

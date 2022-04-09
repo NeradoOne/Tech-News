@@ -49,13 +49,18 @@ function init() {
     if (sessionStorage.getItem('locked') == 'false') {
         floating.classList.toggle("none")
         render('none')
-        Toastify({
-            text: `Welcome ${JSON.parse(localStorage.getItem('usuario')).name}`,
-            className: "toasty",
-            close: true,
-            duration: -1,
-            offset: { x: 0, y: '18vh' }
-          }).showToast();
+        document.querySelector('#floating').classList.toggle('lds-dual-ring');
+        setTimeout(() => {
+            Toastify({
+                text: `Welcome ${JSON.parse(localStorage.getItem('usuario')).name}`,
+                className: "toasty",
+                close: true,
+                duration: -1,
+                offset: { x: 0, y: '18vh' }
+            }).showToast();
+            document.querySelector('#floating').classList.toggle('lds-dual-ring');
+        }, 3500);
+        
     } else {
         if (localStorage.getItem('usuario')) {
             render('login')
@@ -67,4 +72,6 @@ function init() {
         }
     }
 }
-init()
+setTimeout(() => {
+    init()    
+}, 5000);
