@@ -51,7 +51,7 @@ const postRemoteComment = (name, comment) => {
 
 const newComment = e => {
     e.preventDefault();
-    // Compueba si el cmpo de comentarios esta vacio
+    // Compueba si el campo de comentarios esta vacio
     if (commentBox.value == '') {
         alert('Please type your comment')
     } else {

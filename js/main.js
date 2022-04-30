@@ -2,7 +2,6 @@ import { TEMPLATES } from './templates.js'
 
 const floating = document.querySelector('#floating')
 
-
 const render = template => floating.innerHTML = TEMPLATES[template];
 
 const register = e => {
@@ -15,7 +14,7 @@ const register = e => {
             terms: e.path[1][4].checked
             })
         )
-        init()
+    init()
 }
 
 const login = e => {
@@ -37,15 +36,12 @@ const login = e => {
 }
 
 const handleUser = e => {
-    e.preventDefault()
-    if (localStorage.getItem('usuario')) {
-        login(e)
-    } else {
-        register(e)
-    }
+    e.preventDefault();
+    localStorage.getItem('usuario') ? login(e) : register(e);
 }
 
 function init() {
+    // se verifica que este la sesion iniciada, comprobando el valor de 'locked'
     if (sessionStorage.getItem('locked') == 'false') {
         floating.classList.toggle("none")
         render('none')
@@ -62,16 +58,15 @@ function init() {
         }, 3500);
         
     } else {
-        if (localStorage.getItem('usuario')) {
+        // Al estar bloqueado renderiza el login o register, segun sea el caso 
+        if (localStorage.getItem('usuario')) { //siendo que ya existe un usuario registrado en localStorage, renderiza login
             render('login')
             document.querySelector('.submit').addEventListener('click', handleUser)
             
-        } else {
+        } else {//en caso que no exista un usuario registrado en localStorage, renderiza register
             render('register')
             document.querySelector('.submit').addEventListener('click', handleUser)
         }
     }
 }
-setTimeout(() => {
-    init()    
-}, 5000);
+setTimeout(() => { init() }, 5000); //Da al usuario una prueba de 5 segundos antes de solicitar identificación
